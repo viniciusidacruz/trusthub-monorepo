@@ -2,9 +2,8 @@
 
 import * as CE from "@/shared/components/external";
 
-import { FormSignInProps } from "./types";
+import type { FormSignInProps } from "./types";
 import { useSignIn } from "../../hooks/use-sign-in";
-import { Eye, EyeOff } from "lucide-react";
 
 export function FormSignIn({ children }: FormSignInProps) {
   const { form, isVisiblePassword, handleToggleVisiblePassword, onSubmit } =

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { FormSignInSchema, formSignInSchema } from "../utils/schema";
+import { type FormSignInSchema, formSignInSchema } from "../utils/schema";
 
 export function useSignIn() {
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
