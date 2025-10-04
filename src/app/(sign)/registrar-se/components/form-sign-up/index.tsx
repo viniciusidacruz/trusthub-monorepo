@@ -2,16 +2,33 @@
 
 import * as CE from "@/shared/components/external";
 
-import { useSignIn } from "../../hooks";
-import type { FormSignInProps } from "./types";
+import type { FormSignUpProps } from "./types";
+import { useSignUp } from "../../hooks";
 
-export function FormSignIn({ children }: FormSignInProps) {
+export function FormSignUp({ children }: FormSignUpProps) {
   const { form, isVisiblePassword, handleToggleVisiblePassword, onSubmit } =
-    useSignIn();
+    useSignUp();
 
   return (
     <CE.Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 w-full max-w-md"
+      >
+        <CE.FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <CE.FormItem>
+              <CE.FormLabel>Nome</CE.FormLabel>
+              <CE.FormControl>
+                <CE.Input placeholder="Digite seu nome" {...field} />
+              </CE.FormControl>
+              <CE.FormMessage />
+            </CE.FormItem>
+          )}
+        />
+
         <CE.FormField
           control={form.control}
           name="email"
@@ -41,6 +58,25 @@ export function FormSignIn({ children }: FormSignInProps) {
               </CE.FormControl>
 
               <CE.FormMessage />
+            </CE.FormItem>
+          )}
+        />
+
+        <CE.FormField
+          name="confirmPassword"
+          control={form.control}
+          render={({ field }) => (
+            <CE.FormItem>
+              <CE.FormLabel>Confirmar senha</CE.FormLabel>
+              <CE.FormControl>
+                <CE.Input
+                  placeholder="Digite sua senha novamente"
+                  type={isVisiblePassword ? "text" : "password"}
+                  {...field}
+                />
+              </CE.FormControl>
+
+              <CE.FormMessage />
 
               <CE.Button
                 type="button"
@@ -58,10 +94,10 @@ export function FormSignIn({ children }: FormSignInProps) {
           size="lg"
           type="submit"
           className="w-full"
-          aria-label="Entrar"
+          aria-label="Cadastrar"
           isLoading={form.formState.isSubmitting}
         >
-          Entrar
+          Cadastrar
         </CE.Button>
       </form>
 

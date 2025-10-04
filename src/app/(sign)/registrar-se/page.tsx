@@ -3,14 +3,14 @@ import Link from "next/link";
 import { ROUTES } from "@/shared/constants";
 
 import { Button } from "@/shared/components/external";
-import { FormSignIn } from "./components/form-sign-in";
+import { FormSignUp } from "./components/form-sign-up";
 
 export default function SignIn() {
   return (
-    <FormSignIn>
+    <FormSignUp>
       <Button variant="secondary" className="w-full mt-4" size="lg" asChild>
-        <Link href={ROUTES.SIGN_UP}>Não tem uma conta? Cadastre-se</Link>
+        <Link href={ROUTES.SIGN_IN}>Já tem uma conta? Entrar</Link>
       </Button>
-    </FormSignIn>
+    </FormSignUp>
   );
 }

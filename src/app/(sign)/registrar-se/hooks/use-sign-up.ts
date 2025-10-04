@@ -4,23 +4,25 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { type FormSignInSchema, formSignInSchema } from "../utils";
+import { type FormSignUpSchema, formSignUpSchema } from "../utils";
 
-export function useSignIn() {
+export function useSignUp() {
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
 
   const handleToggleVisiblePassword = () =>
     setIsVisiblePassword((prevState) => !prevState);
 
-  const form = useForm<FormSignInSchema>({
-    resolver: zodResolver(formSignInSchema),
+  const form = useForm<FormSignUpSchema>({
+    resolver: zodResolver(formSignUpSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
-  const onSubmit = (data: FormSignInSchema) => {
+  const onSubmit = (data: FormSignUpSchema) => {
     console.log(data);
   };
 
