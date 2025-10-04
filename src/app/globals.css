@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(54.6% 0.245 262.881);
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-200 text-zinc-900;
+  }
+}
