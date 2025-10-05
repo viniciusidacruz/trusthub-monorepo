@@ -1,13 +1,12 @@
 "use client";
 
-import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import { signUp } from "@/shared/lib";
+import { toast } from "sonner";
 import { ROUTES } from "@/shared/constants";
+import { signUp } from "@/shared/lib";
 
 import { type FormSignUpSchema, formSignUpSchema } from "../utils";
 
@@ -40,14 +39,14 @@ export function useSignUp() {
       {
         onSuccess: () => {
           toast.success(
-            "Cadastro realizado com sucesso. Verifique seu email para verificar sua conta.",
+            "Cadastro realizado com sucesso. Verifique seu email para verificar sua conta."
           );
           router.push(ROUTES.SIGN_IN);
         },
         onError: (context) => {
           toast.error(context.error.message);
         },
-      },
+      }
     );
   };
 

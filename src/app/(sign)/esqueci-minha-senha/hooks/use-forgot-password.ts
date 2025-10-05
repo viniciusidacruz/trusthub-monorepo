@@ -2,7 +2,6 @@
 
 import { toast } from "sonner";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ROUTES } from "@/shared/constants";
@@ -14,8 +13,6 @@ import {
 } from "../utils";
 
 export function useForgotPassword() {
-  const router = useRouter();
-
   const form = useForm<FormForgotPasswordSchema>({
     resolver: zodResolver(formForgotPasswordSchema),
     mode: "onBlur",

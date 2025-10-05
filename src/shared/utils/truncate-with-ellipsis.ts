@@ -1,6 +1,6 @@
 export function truncateWithEllipsis(
   text: string | null | undefined,
-  limit: number,
+  limit: number
 ): string {
   if (text == null) return "";
 
@@ -10,5 +10,5 @@ export function truncateWithEllipsis(
   const chars = Array.from(text);
   if (chars.length <= n) return text;
 
-  return chars.slice(0, n).join("") + "...";
+  return `${chars.slice(0, n).join("")}...`;
 }

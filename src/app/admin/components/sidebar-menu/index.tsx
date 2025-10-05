@@ -1,4 +1,4 @@
-import { User } from "better-auth";
+import type { User } from "better-auth";
 import { Home, Lightbulb, MessageCircle, User as UserIcon } from "lucide-react";
 
 import {
@@ -14,8 +14,6 @@ import { SidebarWrapper } from "./sidebar-wrapper";
 import { SidebarInformation } from "./sidebar-information";
 
 export function SidebarMenu({ user }: { user: User }) {
-  const image = user.image ?? "";
-
   return (
     <SidebarWrapper>
       <div className="flex items-center gap-3">

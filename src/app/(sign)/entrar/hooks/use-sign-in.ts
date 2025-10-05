@@ -1,13 +1,12 @@
 "use client";
 
-import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import { signIn } from "@/shared/lib";
+import { toast } from "sonner";
 import { ROUTES } from "@/shared/constants";
+import { signIn } from "@/shared/lib";
 
 import { type FormSignInSchema, formSignInSchema } from "../utils";
 

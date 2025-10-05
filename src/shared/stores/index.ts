@@ -1,9 +1,7 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
-import { persist } from "zustand/middleware";
-import { subscribeWithSelector } from "zustand/middleware";
+import { devtools, persist, subscribeWithSelector } from "zustand/middleware";
 
-import { sidebarSlice, type SidebarSlice } from "./slices/sidebar";
+import { type SidebarSlice, sidebarSlice } from "./slices/sidebar";
 
 type Store = SidebarSlice;
 
@@ -12,6 +10,6 @@ export const useAppStore = create<Store>()(
     persist(subscribeWithSelector(sidebarSlice), {
       name: "app-storage",
     }),
-    { name: "AppStore" },
-  ),
+    { name: "AppStore" }
+  )
 );

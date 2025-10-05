@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ROUTES } from "@/shared/constants";
-import { forgetPassword, resetPassword, signUp } from "@/shared/lib";
+import { resetPassword } from "@/shared/lib";
 
 import {
   type FormResetPasswordSchema,

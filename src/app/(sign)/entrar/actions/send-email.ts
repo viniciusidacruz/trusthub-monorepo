@@ -56,7 +56,7 @@ export async function sendEmailAction({
   };
 
   try {
-    const result = await transporter.sendMail(emailOptions);
+    await transporter.sendMail(emailOptions);
     return { success: true };
   } catch (error) {
     console.error("❌ Erro ao enviar email:", error);

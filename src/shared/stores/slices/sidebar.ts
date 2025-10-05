@@ -1,4 +1,4 @@
-import { create, StateCreator } from "zustand";
+import type { StateCreator } from "zustand";
 
 interface State {
   isOpenSidebar: boolean;

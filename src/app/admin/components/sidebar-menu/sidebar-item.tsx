@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useShallow } from "zustand/shallow";
 import { usePathname } from "next/navigation";
 
@@ -27,7 +27,7 @@ export function SidebarItem({ title, href, icon }: SidebarItemProps) {
         className={cn(
           "p-4 rounded-md flex items-center gap-2 hover:text-white",
           !isOpenSidebar && "justify-center",
-          isActive ? "text-white" : "text-blue-200",
+          isActive ? "text-white" : "text-blue-200"
         )}
       >
         {icon}

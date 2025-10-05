@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "better-auth";
+import type { User } from "better-auth";
 import { useShallow } from "zustand/shallow";
 
 import { useAppStore } from "@/shared/stores";

@@ -1,8 +1,3 @@
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-
-import { auth } from "@/shared/lib";
-import { ROUTES } from "@/shared/constants";
 import { AnimationX } from "@/shared/components/internal";
 
 export default async function SignLayout({
