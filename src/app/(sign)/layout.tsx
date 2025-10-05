@@ -13,13 +13,7 @@ export default async function SignLayout({
   return (
     <main className="min-h-screen w-full flex">
       <section className="flex flex-col items-center justify-center flex-1 px-8">
-        <AnimationX direction="right">
-          <h1 className="text-4xl font-bold text-center mb-8">
-            Insira seus dados <br /> para{" "}
-            <strong className="text-primary">continuar</strong>
-          </h1>
-          {children}
-        </AnimationX>
+        <AnimationX direction="right">{children}</AnimationX>
       </section>
 
       <section className="hidden md:flex flex-col items-center justify-center bg-primary w-2/5">

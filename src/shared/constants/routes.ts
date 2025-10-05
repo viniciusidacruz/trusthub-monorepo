@@ -5,4 +5,5 @@ export const ROUTES = {
   PROFILE: "/admin/perfil",
   MESSAGES: "/admin/mensagens",
   SUGGESTIONS: "/admin/sugestoes",
+  FORGOT_PASSWORD: "/esqueci-minha-senha",
 };

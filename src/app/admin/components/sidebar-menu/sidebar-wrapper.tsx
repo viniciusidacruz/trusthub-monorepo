@@ -13,6 +13,8 @@ import { useAppStore } from "@/shared/stores";
 import { Button } from "@/shared/components/external";
 
 export function SidebarWrapper({ children }: { children: React.ReactNode }) {
+  const [isLoading, setIsLoading] = useState(false);
+
   const { isOpenSidebar, toggleSidebar } = useAppStore(
     useShallow((state) => ({
       isOpenSidebar: state.isOpenSidebar,
@@ -23,6 +25,8 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   const handleLogout = async () => {
+    setIsLoading(true);
+
     await signOut({
       fetchOptions: {
         onError: (context) => {
@@ -30,6 +34,9 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
         },
         onSuccess: () => {
           router.push(ROUTES.SIGN_IN);
+        },
+        onResponse: () => {
+          setIsLoading(false);
         },
       },
     });
@@ -60,6 +67,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
       <Button
         title="Sair"
         type="button"
+        isLoading={isLoading}
         onClick={handleLogout}
         className="mt-auto p-4 flex items-center gap-4 text-base"
       >

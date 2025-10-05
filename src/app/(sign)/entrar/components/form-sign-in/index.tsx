@@ -1,17 +1,22 @@
 "use client";
 
+import Link from "next/link";
+
+import { ROUTES } from "@/shared/constants";
 import * as CE from "@/shared/components/external";
 
 import { useSignIn } from "../../hooks";
-import type { FormSignInProps } from "./types";
 
-export function FormSignIn({ children }: FormSignInProps) {
+export function FormSignIn() {
   const { form, isVisiblePassword, handleToggleVisiblePassword, onSubmit } =
     useSignIn();
 
   return (
     <CE.Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 max-w-md"
+      >
         <CE.FormField
           control={form.control}
           name="email"
@@ -42,14 +47,20 @@ export function FormSignIn({ children }: FormSignInProps) {
 
               <CE.FormMessage />
 
-              <CE.Button
-                type="button"
-                variant="ghost"
-                className="w-fit px-0"
-                onClick={handleToggleVisiblePassword}
-              >
-                {isVisiblePassword ? "Ocultar" : "Mostrar"} senha
-              </CE.Button>
+              <div className="w-full flex items-center gap-4 justify-between">
+                <CE.Button
+                  type="button"
+                  variant="ghost"
+                  className="w-fit px-0"
+                  onClick={handleToggleVisiblePassword}
+                >
+                  {isVisiblePassword ? "Ocultar" : "Mostrar"} senha
+                </CE.Button>
+
+                <CE.Button variant="ghost" className="w-fit px-0" asChild>
+                  <Link href={ROUTES.FORGOT_PASSWORD}>Esqueceu sua senha?</Link>
+                </CE.Button>
+              </div>
             </CE.FormItem>
           )}
         />
@@ -64,8 +75,6 @@ export function FormSignIn({ children }: FormSignInProps) {
           Entrar
         </CE.Button>
       </form>
-
-      {children}
     </CE.Form>
   );
 }

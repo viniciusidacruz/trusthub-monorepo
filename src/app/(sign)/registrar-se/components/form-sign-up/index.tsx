@@ -2,10 +2,9 @@
 
 import * as CE from "@/shared/components/external";
 
-import type { FormSignUpProps } from "./types";
 import { useSignUp } from "../../hooks";
 
-export function FormSignUp({ children }: FormSignUpProps) {
+export function FormSignUp() {
   const { form, isVisiblePassword, handleToggleVisiblePassword, onSubmit } =
     useSignUp();
 
@@ -13,7 +12,7 @@ export function FormSignUp({ children }: FormSignUpProps) {
     <CE.Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-full max-w-md"
+        className="space-y-4 max-w-md"
       >
         <CE.FormField
           control={form.control}
@@ -101,8 +100,6 @@ export function FormSignUp({ children }: FormSignUpProps) {
           Cadastrar
         </CE.Button>
       </form>
-
-      {children}
     </CE.Form>
   );
 }
