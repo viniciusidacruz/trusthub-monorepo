@@ -1,9 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
-import { ROUTES } from "@/shared/constants";
+import { METADATA, ROUTES } from "@/shared/constants";
 
 import { Button } from "@/shared/components/external";
 import { FormSignIn } from "./components/form-sign-in";
+
+export const metadata: Metadata = {
+  title: `Entrar | ${METADATA.title}`,
+};
 
 export default function SignIn() {
   return (

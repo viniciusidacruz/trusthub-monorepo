@@ -1,13 +1,26 @@
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
+import { auth } from "@/shared/lib";
+import { ROUTES } from "@/shared/constants";
 import { AnimationX } from "@/shared/components/internal";
 
-export default function SignLayout({
+export default async function SignLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (session) {
+    redirect(ROUTES.DASHBOARD);
+  }
+
   return (
     <main className="min-h-screen w-full flex">
-      <section className="flex flex-col items-center justify-center flex-1">
+      <section className="flex flex-col items-center justify-center flex-1 px-8">
         <AnimationX direction="right">
           <h1 className="text-4xl font-bold text-center mb-8">
             Insira seus dados <br /> para{" "}

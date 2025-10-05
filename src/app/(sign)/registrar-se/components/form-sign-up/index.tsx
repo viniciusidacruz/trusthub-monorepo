@@ -95,6 +95,7 @@ export function FormSignUp({ children }: FormSignUpProps) {
           type="submit"
           className="w-full"
           aria-label="Cadastrar"
+          disabled={!form.formState.isValid}
           isLoading={form.formState.isSubmitting}
         >
           Cadastrar
