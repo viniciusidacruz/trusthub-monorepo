@@ -40,14 +40,14 @@ export function useSignUp() {
       {
         onSuccess: () => {
           toast.success(
-            "Cadastro realizado com sucesso. Verifique seu email para verificar sua conta."
+            "Cadastro realizado com sucesso. Verifique seu email para verificar sua conta.",
           );
           router.push(ROUTES.SIGN_IN);
         },
         onError: (context) => {
           toast.error(context.error.message);
         },
-      }
+      },
     );
   };
 

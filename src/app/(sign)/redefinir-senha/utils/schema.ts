@@ -14,7 +14,7 @@ export const formResetPasswordSchema = z
         {
           message:
             "Senha deve conter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial",
-        }
+        },
       ),
     confirmPassword: z
       .string({

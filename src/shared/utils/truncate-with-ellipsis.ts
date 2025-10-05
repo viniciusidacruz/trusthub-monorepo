@@ -1,6 +1,6 @@
 export function truncateWithEllipsis(
   text: string | null | undefined,
-  limit: number
+  limit: number,
 ): string {
   if (text == null) return "";
 

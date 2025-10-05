@@ -19,7 +19,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
     useShallow((state) => ({
       isOpenSidebar: state.isOpenSidebar,
       toggleSidebar: state.toggleSidebar,
-    }))
+    })),
   );
 
   const router = useRouter();
@@ -46,7 +46,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
     <aside
       className={cn(
         isOpenSidebar ? "w-64 " : "w-[106px]",
-        "transition-ease-in-out items-start duration-300 h-screen fixed top-0 left-0 z-50 bg-primary border-r border-zinc-300 flex flex-col p-6"
+        "transition-ease-in-out items-start duration-300 h-screen fixed top-0 left-0 z-50 bg-primary border-r border-zinc-300 flex flex-col p-6",
       )}
     >
       {children}

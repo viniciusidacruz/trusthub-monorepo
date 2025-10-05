@@ -12,6 +12,6 @@ export const useAppStore = create<Store>()(
     persist(subscribeWithSelector(sidebarSlice), {
       name: "app-storage",
     }),
-    { name: "AppStore" }
-  )
+    { name: "AppStore" },
+  ),
 );
