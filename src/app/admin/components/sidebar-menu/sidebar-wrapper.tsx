@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useShallow } from "zustand/shallow";
 import { ChevronsLeft, ChevronsRight, LogOut } from "lucide-react";
@@ -67,11 +67,17 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
       <Button
         title="Sair"
         type="button"
-        isLoading={isLoading}
+        disabled={isLoading}
         onClick={handleLogout}
         className="mt-auto p-4 flex items-center gap-4 text-base"
       >
-        <LogOut className="size-6" /> {isOpenSidebar && "Sair"}
+        {isLoading ? (
+          "Saindo..."
+        ) : (
+          <Fragment>
+            <LogOut className="size-6" /> {isOpenSidebar && "Sair"}
+          </Fragment>
+        )}
       </Button>
     </aside>
   );
