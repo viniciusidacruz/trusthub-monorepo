@@ -6,4 +6,5 @@ export const ROUTES = {
   MESSAGES: "/admin/mensagens",
   SUGGESTIONS: "/admin/sugestoes",
   FORGOT_PASSWORD: "/esqueci-minha-senha",
+  RESET_PASSWORD: "/redefinir-senha",
 };

@@ -14,21 +14,20 @@ export const auth = betterAuth({
     minPasswordLength: 8,
     autoSignIn: false,
     requireEmailVerification: true,
+    sendResetPassword: async ({ user, url }) => {
+      await sendEmailAction({
+        to: user.email,
+        subject: "Resetar sua senha",
+        meta: {
+          description:
+            "Por favor, clique no link abaixo para resetar sua senha",
+          link: url,
+        },
+      });
+    },
   },
-  //   sendResetPassword: async ({ user, url }) => {
-  //     // await sendEmailAction({
-  //     //   to: user.email,
-  //     //   subject: "Reset your password",
-  //     //   meta: {
-  //     //     description: "Por favor, clique no link abaixo para resetar sua senha",
-  //     //     link: url,
-  //     //   }
-  //     // });
-  //   },
-  // },
   emailVerification: {
     sendOnSignUp: true,
-    expiresIn: 60 * 60, // 1 hour
     autoSignInAfterVerification: true,
     sendVerificationEmail: async ({ user, url }) => {
       await sendEmailAction({
