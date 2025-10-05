@@ -10,14 +10,6 @@ export default async function SignLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  if (session) {
-    redirect(ROUTES.DASHBOARD);
-  }
-
   return (
     <main className="min-h-screen w-full flex">
       <section className="flex flex-col items-center justify-center flex-1 px-8">

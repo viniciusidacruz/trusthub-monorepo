@@ -25,7 +25,7 @@ export function SidebarItem({ title, href, icon }: SidebarItemProps) {
       <Link
         href={href}
         className={cn(
-          "p-4 rounded-md flex items-center gap-2",
+          "p-4 rounded-md flex items-center gap-2 hover:text-white",
           !isOpenSidebar && "justify-center",
           isActive ? "text-white" : "text-blue-200"
         )}

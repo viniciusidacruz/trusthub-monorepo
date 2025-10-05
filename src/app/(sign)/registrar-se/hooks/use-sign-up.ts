@@ -40,7 +40,7 @@ export function useSignUp() {
       {
         onSuccess: () => {
           toast.success("Cadastro realizado com sucesso");
-          router.push(ROUTES.DASHBOARD);
+          router.push(ROUTES.SIGN_IN);
         },
         onError: (context) => {
           toast.error(context.error.message);
