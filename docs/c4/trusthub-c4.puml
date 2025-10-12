@@ -3,7 +3,8 @@
 
 @startuml TrustHub_Context
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+SHOW_LEGEND()
 
 Person(user, "Usuário", "Cliente que publica e acompanha feedbacks")
 Person(admin, "Admin", "Gestor da empresa que responde feedbacks e acompanha métricas")
@@ -21,7 +22,8 @@ Rel(trusthub, emailService, "Dispara alertas críticos e comunicações")
 
 @startuml TrustHub_Containers
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+SHOW_LEGEND()
 
 Person(user, "Usuário")
 Person(admin, "Admin")
@@ -55,7 +57,8 @@ Rel(externalIngest, prisma, "Persiste dados integrados")
 
 @startuml TrustHub_Components
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+SHOW_LEGEND()
 
 Container(nextApp, "Next.js App", "React")
 
@@ -77,7 +80,8 @@ Rel(apiActions, prismaAdapter, "Usa Prisma via server-side")
 
 @startuml TrustHub_Dynamic
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
-LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+SHOW_LEGEND()
 
 Person(user, "Usuário")
 Person(admin, "Admin")
