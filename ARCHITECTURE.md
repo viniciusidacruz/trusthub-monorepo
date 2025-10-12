@@ -201,21 +201,38 @@ export type SidebarSlice = State & Actions;
 
 ---
 
-## 9) Convenções de Código
+## 9) Domínio de Feedbacks e Regras de Visualização
 
-### 9.1) Nomenclatura
+### 9.1) Dashboard do Admin
+- **Contexto**: sempre filtrado pela empresa à qual o admin pertence.
+- **Módulo Feedbacks**: lista consolidada com filtros por canal, sentimento e prioridade. Permite responder, marcar status (novo, em andamento, resolvido) e atribuir responsáveis internos.
+- **Módulo Sugestões**: camada de analytics com IA que agrega dados históricos, identifica padrões (picos de reclamações, elogios recorrentes) e gera recomendações automáticas de melhoria.
+- **Visão Panorâmica**: cards e gráficos de reputação, volume de feedbacks, tempo médio de resposta e comparativos por período.
+- **Acesso Controlado**: somente admins e colaboradores da empresa conseguem visualizar métricas internas e sugestões estratégicas.
+
+### 9.2) Experiência do Usuário Final
+- **Exploração de Empresas**: catálogo público com filtros por categoria/setor. Cada perfil exibe descrição, canais oficiais e histórico de feedbacks públicos.
+- **Registro de Feedback**: formulário vinculado à empresa selecionada, com acompanhamento do status e das respostas recebidas.
+- **Área Pessoal**: linha do tempo com todos os feedbacks enviados, respostas dos admins e notificações de atualização.
+- **Transparência**: usuários não acessam métricas internas nem sugestões IA; veem apenas informações públicas e interações que realizaram.
+
+---
+
+## 10) Convenções de Código
+
+### 10.1) Nomenclatura
 - **Arquivos**: kebab-case (`form-sign-in.tsx`)
 - **Componentes**: PascalCase (`FormSignIn`)
 - **Hooks**: camelCase com prefixo `use` (`useSignIn`)
 - **Funções**: camelCase (`handleSubmit`)
 - **Constantes**: UPPER_SNAKE_CASE (`ROUTES`)
 
-### 9.2) Estrutura de Arquivos
+### 10.2) Estrutura de Arquivos
 - `index.ts` para exports centralizados
 - Separação clara entre lógica e apresentação
 - Imports organizados: externos → internos → relativos
 
-### 9.3) TypeScript
+### 10.3) TypeScript
 - Tipagem estrita habilitada
 - Interfaces para contratos
 - Types para união de tipos
@@ -223,19 +240,19 @@ export type SidebarSlice = State & Actions;
 
 ---
 
-## 10) Qualidade & Manutenibilidade
+## 11) Qualidade & Manutenibilidade
 
-### 10.1) Ferramentas de Qualidade
+### 11.1) Ferramentas de Qualidade
 - **Biome**: linting e formatação
 - **TypeScript**: verificação de tipos
 - **Prisma**: validação de schema
 
-### 10.2) Testabilidade
+### 11.2) Testabilidade
 - Funções puras em `shared/utils`
 - Hooks isolados e testáveis
 - Componentes stateless quando possível
 
-### 10.3) Performance
+### 11.3) Performance
 - Next.js App Router para otimizações automáticas
 - Turbopack para builds rápidos
 - Prisma com queries otimizadas

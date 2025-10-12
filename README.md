@@ -70,28 +70,31 @@ Cada sessão é autenticada e isolada, garantindo que os acessos e ações dentr
 ### 🧑‍💼 Tipos de Usuário  
 
 #### 1. **Admin (Administrador da Empresa)**
-- Representa a **empresa contratante** do TrustHub.  
-- É responsável por **gerenciar todos os dados e usuários associados à sua organização**.  
-- Tem acesso completo aos recursos vinculados à sua empresa, incluindo:  
-  - Visualização de **todos os feedbacks** da empresa.  
-  - Acesso aos **relatórios analíticos e métricas de reputação**.  
-  - Configuração dos **canais integrados** (Google, Reclame Aqui, etc.).  
-  - Gerenciamento de **usuários internos** (criação, edição e exclusão).  
-  - Respostas oficiais aos feedbacks recebidos.  
-- O **Admin é sempre vinculado a uma única empresa**, e sua sessão reflete o contexto organizacional dessa empresa.  
+- Representa a **empresa contratante** do TrustHub.
+- É responsável por **gerenciar todos os dados e usuários associados à sua organização**.
+- Possui uma **visão panorâmica** do desempenho da empresa, reunindo indicadores de reputação, volume de feedbacks e status das respostas em um único dashboard.
+- Acesso completo aos recursos vinculados à sua empresa, incluindo:
+  - Visualização e filtragem de **todos os feedbacks recebidos**, por canal, sentimento ou prioridade.
+  - Acesso à aba **Sugestões**, um módulo de analytics com IA que destaca **pontos fortes, pontos críticos e oportunidades de melhoria** da empresa.
+  - Recebimento de **recomendações automáticas** para melhorar processos, atendimento e produtos com base nos feedbacks analisados.
+  - Configuração dos **canais integrados** (Google, Reclame Aqui, etc.).
+  - Gerenciamento de **usuários internos** (criação, edição e exclusão).
+  - Respostas oficiais aos feedbacks recebidos.
+- O **Admin é sempre vinculado a uma única empresa**, e sua sessão reflete o contexto organizacional dessa empresa.
 
 #### 2. **User (Usuário Comum)**
-- É o usuário final da plataforma, que interage com as empresas cadastradas no ecossistema TrustHub.  
-- Pode:  
-  - **Visualizar todas as empresas** públicas cadastradas na plataforma.  
-  - **Criar novos feedbacks** sobre produtos, serviços ou atendimentos.  
-  - **Avaliar empresas** com base em sua experiência.  
-  - **Ver as respostas** enviadas pelos administradores das empresas.  
-  - **Consultar informações públicas** das empresas, incluindo:  
-    - Nome comercial, setor e descrição.  
-    - **Avaliações e perguntas** relacionadas à empresa.  
-    - **Canais de contato** (e-mail, telefone ou links externos) — quando disponibilizados pela própria empresa.  
-- O usuário não tem acesso aos painéis internos de gestão das empresas, apenas às informações públicas e interativas.  
+- É o usuário final da plataforma, que interage com as empresas cadastradas no ecossistema TrustHub.
+- Pode:
+  - **Visualizar todas as empresas** públicas cadastradas na plataforma e navegar pelos seus perfis.
+  - **Criar novos feedbacks** sobre produtos, serviços ou atendimentos, atribuindo cada feedback à empresa correspondente.
+  - **Acompanhar o histórico completo** de mensagens enviadas e respostas recebidas das empresas diretamente no seu perfil.
+  - **Avaliar empresas** com base em sua experiência.
+  - **Ver as respostas** enviadas pelos administradores das empresas.
+  - **Consultar informações públicas** das empresas, incluindo:
+    - Nome comercial, setor e descrição.
+    - **Avaliações, perguntas e feedbacks** relacionados à empresa.
+    - **Canais de contato** (e-mail, telefone ou links externos) — quando disponibilizados pela própria empresa.
+- O usuário não tem acesso aos painéis internos de gestão das empresas, apenas às informações públicas e interativas.
 
 ---
 
@@ -119,14 +122,14 @@ Cada sessão é autenticada e isolada, garantindo que os acessos e ações dentr
 
 ### 🧭 Resumo do Modelo de Acesso  
 
-| Função        | Pode ver todas as empresas | Pode criar feedbacks | Pode ver respostas | Pode gerenciar empresa | Pode ver feedbacks internos | Pode acessar contatos públicos |
-|----------------|:--------------------------:|:--------------------:|:------------------:|:----------------------:|:---------------------------:|:------------------------------:|
-| **User**       | ✅                         | ✅                   | ✅                 | ❌                     | ❌                          | ✅                            |
-| **Admin**      | ❌ (somente sua empresa)   | ❌                   | ✅                 | ✅                     | ✅                          | ✅ (da própria empresa)        |
+| Função        | Pode ver todas as empresas | Pode criar feedbacks | Pode ver respostas | Pode gerenciar empresa | Pode ver feedbacks internos | Aba Sugestões (Analytics + IA) | Histórico pessoal de mensagens | Pode acessar contatos públicos |
+|----------------|:--------------------------:|:--------------------:|:------------------:|:----------------------:|:----------------------------:|:------------------------------:|:------------------------------:|:------------------------------:|
+| **User**       | ✅                         | ✅                   | ✅                 | ❌                     | ❌                            | ❌                             | ✅                              | ✅                            |
+| **Admin**      | ❌ (somente sua empresa)   | ❌                   | ✅                 | ✅                     | ✅                            | ✅                             | ✅ (dos colaboradores)          | ✅ (da própria empresa)        |
 
 ---
 
-📌 **Em resumo:**  
-O **User** interage com todas as empresas públicas cadastradas no TrustHub — visualizando informações, avaliações e canais de contato — enquanto o **Admin** gerencia integralmente os dados, feedbacks e reputação da sua própria empresa.  
+📌 **Em resumo:**
+O **User** navega livremente pelas empresas públicas cadastradas, publica feedbacks e acompanha o histórico de conversas no próprio perfil, enquanto o **Admin** enxerga uma visão panorâmica da sua empresa, responde feedbacks e usa a aba de **Sugestões** com IA para priorizar melhorias.
 
-Essa separação de papéis garante **segurança, integridade das informações** e uma **experiência direcionada** para cada tipo de usuário.
+Essa separação de papéis garante **segurança, integridade das informações** e uma **experiência direcionada** para cada tipo de usuário, com insights estratégicos reservados aos administradores e interações transparentes para os clientes finais.
