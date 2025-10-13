@@ -4,7 +4,6 @@
 @startuml TrustHub_Context
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 LAYOUT_TOP_DOWN()
-SHOW_LEGEND()
 
 Person(user, "Usuário", "Cliente que publica e acompanha feedbacks")
 Person(admin, "Admin", "Gestor da empresa que responde feedbacks e acompanha métricas")
@@ -18,12 +17,18 @@ Rel(admin, trusthub, "Gere empresa, responde feedbacks, consome analytics")
 Rel(trusthub, googleReviews, "Importa avaliações públicas (planos Intermediate e Enterprise)")
 Rel(trusthub, reclameAqui, "Sincroniza reclamações (plano Enterprise)")
 Rel(trusthub, emailService, "Dispara alertas críticos e comunicações")
+
+legend right
+  |= Elemento |= Significado |
+  |Pessoa|Atores que interagem com a plataforma|
+  |Sistema|TrustHub enquanto solução B2B|
+  |Sistema Externo|Fontes externas ou serviços integrados|
+endlegend
 @enduml
 
 @startuml TrustHub_Containers
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 LAYOUT_TOP_DOWN()
-SHOW_LEGEND()
 
 Person(user, "Usuário")
 Person(admin, "Admin")
@@ -53,12 +58,18 @@ Rel(notification, emailService, "SMTP")
 Rel(externalIngest, googleReviews, "Importa avaliações públicas")
 Rel(externalIngest, reclameAqui, "Coleta reclamações")
 Rel(externalIngest, prisma, "Persiste dados integrados")
+
+legend right
+  |= Elemento |= Significado |
+  |Container|Componentes executáveis que compõem o TrustHub|
+  |Boundary|Escopo lógico da plataforma|
+  |Sistema Externo|Integrações fora do controle direto|
+endlegend
 @enduml
 
 @startuml TrustHub_Components
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 LAYOUT_TOP_DOWN()
-SHOW_LEGEND()
 
 Container(nextApp, "Next.js App", "React")
 
@@ -76,12 +87,17 @@ Rel(forms, apiActions, "Submete dados com validação")
 Rel(appRouter, zustandStores, "Controla estado de interface")
 Rel(appRouter, authClient, "Controla rotas protegidas")
 Rel(apiActions, prismaAdapter, "Usa Prisma via server-side")
+
+legend right
+  |= Elemento |= Significado |
+  |Container|Aplicativo Next.js renderizado para o usuário|
+  |Componente|Blocos lógicos que compõem o container|
+endlegend
 @enduml
 
 @startuml TrustHub_Dynamic
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
 LAYOUT_TOP_DOWN()
-SHOW_LEGEND()
 
 Person(user, "Usuário")
 Person(admin, "Admin")
@@ -102,6 +118,13 @@ Rel(prisma, database, "8. Retorna dados autorizados")
 Rel(externalIngest, prisma, "9. Jobs importam avaliações externas (quando plano >= Intermediate)")
 Rel(prisma, database, "10. Atualiza tabelas de fontes externas")
 Rel(serverActions, nextApp, "11. Admin recebe alertas/sugestões conforme plano")
+
+legend right
+  |= Elemento |= Significado |
+  |Pessoa|Atores que iniciam o fluxo|
+  |Container|Serviços/processos envolvidos na execução|
+  |Database|Armazenamento persistente utilizado|
+endlegend
 @enduml
 
 ' Narrativa do Fluxo do Usuário
